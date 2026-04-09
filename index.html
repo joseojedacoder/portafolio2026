@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio | Jose Ojeda</title>
+
+  <style>
+    :root {
+      --bg:#f2f3f5;           /* fondo suave (gris claro) */
+      --text:#1f2933;         /* gris oscuro, no negro puro */
+      --accent:#c5a880;       /* acento elegante */
+      --card:#fafafa;         /* tarjetas suaves */
+    }
+
+    body.dark { --bg:#0f0f0f; --text:#ffffff; --card:#1a1a1a; }
+
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+    html{scroll-behavior:smooth;} 
+    body{background:var(--bg);color:var(--text);line-height:1.6;transition:.3s;}
+
+    header{position:fixed;top:0;width:100%;padding:20px 10%;display:flex;justify-content:space-between;align-items:center;background:rgba(245,245,245,0.85);backdrop-filter: blur(10px);z-index:1000;transition:.3s}
+    body.dark header{background:rgba(15,15,15,0.9)}
+
+    header h1{font-size:1.2rem;letter-spacing:2px}
+
+    nav{display:flex}
+    nav a{color:var(--text);text-decoration:none;margin-left:20px;font-size:.9rem;transition:.3s}
+    nav a:hover{color:var(--accent)}
+
+    .menu-toggle{display:none;font-size:1.5rem;cursor:pointer}
+
+    .theme-btn{margin-left:20px;cursor:pointer;border:none;background:var(--card);padding:8px 12px;border-radius:5px;font-size:1rem}
+
+    body{padding-top:80px}
+    section{padding:80px 10%}
+
+    .hero{min-height:80vh;display:flex;flex-direction:column;justify-content:center}
+    .hero h2{font-size:2.5rem}
+    .hero p{margin:20px 0;color:#6b7280;}
+
+    .btn{display:inline-block;padding:10px 20px;border:1px solid var(--accent);color:var(--accent);text-decoration:none;transition:.3s;margin-right:10px;margin-top:10px}
+    .btn:hover{background:var(--accent);color:#000}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+
+    .card{background:var(--card);padding:20px;border-radius:10px;transition:transform .3s}
+    .card:hover{transform:translateY(-5px)}
+
+    .skills span{display:inline-block;background:var(--card);padding:8px 12px;margin:5px;border-radius:5px;font-size:.8rem}
+
+    footer{text-align:center;padding:40px;color:#777}
+
+    .fade-in{opacity:0;transform:translateY(20px);transition:all .8s ease}
+    .fade-in.visible{opacity:1;transform:translateY(0)}
+
+    @media (max-width:768px){
+      nav{position:absolute;top:70px;right:10%;background:var(--card);flex-direction:column;width:200px;display:none;border-radius:10px;padding:10px}
+      nav a{margin:10px 0}
+      nav.active{display:flex}
+      .menu-toggle{display:block}
+      .hero h2{font-size:2rem}
+      section{padding:60px 8%}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>JO</h1>
+  <div style="display:flex;align-items:center;">
+    <button id="themeBtn" class="theme-btn" onclick="toggleTheme()">🌙</button>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </div>
+
+  <nav id="nav">
+    <a href="#about">Sobre mí</a>
+    <a href="#skills">Habilidades</a>
+    <a href="#experience">Experiencia</a>
+    <a href="#education">Educación</a>
+    <a href="#certs">Certificados</a>
+    <a href="#projects">Proyectos</a>
+    <a href="#contact">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Jose Ojeda</h2>
+  <p>Desarrollador Web | Marketing | Data</p>
+  <div>
+    <a href="#projects" class="btn">Ver proyectos</a>
+    <a href="cv.pdf" class="btn" download>Descargar CV</a>
+  </div>
+</section>
+
+<section id="about" class="fade-in">
+  <h2>Sobre mí</h2>
+  <p>Soy profesional en sistemas y marketing, enfocado en desarrollo web y análisis de datos. Creo soluciones digitales funcionales, limpias y orientadas a resultados.</p>
+</section>
+
+<section id="skills" class="fade-in">
+  <h2>Habilidades</h2>
+  <div class="skills">
+    <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Git</span>
+    <span>Excel</span><span>Power BI</span><span>SQL</span>
+  </div>
+</section>
+
+<section id="experience" class="fade-in">
+  <h2>Experiencia</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Puesto / Empresa</h3>
+      <p>Fecha</p>
+      <p>Logros clave: métricas, resultados.</p>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="fade-in">
+  <h2>Educación</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Carrera / Instituto</h3>
+      <p>Fecha</p>
+      <p>Detalle breve.</p>
+    </div>
+  </div>
+</section>
+
+<section id="certs" class="fade-in">
+  <h2>Certificados</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Nombre del certificado</h3>
+      <p>Plataforma / Año</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="fade-in">
+  <h2>Proyectos</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Proyecto 1</h3>
+      <p>Descripción breve.</p>
+    </div>
+    <div class="card">
+      <h3>Proyecto 2</h3>
+      <p>Descripción breve.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="fade-in">
+  <h2>Contacto</h2>
+  <p>Email: tuemail@gmail.com</p>
+  <p>LinkedIn: tu-linkedin</p>
+  <p>GitHub: tu-github</p>
+</section>
+
+<footer>
+  <p>© 2026 Jose Ojeda</p>
+</footer>
+
+<script>
+  const elements = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+
+  elements.forEach(el => observer.observe(el));
+
+  function toggleMenu(){
+    document.getElementById('nav').classList.toggle('active');
+  }
+
+  const btn = document.getElementById('themeBtn');
+
+  function setIcon(){
+    if(document.body.classList.contains('dark')){
+      btn.textContent = '☀️';
+    } else {
+      btn.textContent = '🌙';
+    }
+  }
+
+  function toggleTheme(){
+    document.body.classList.toggle('dark');
+    localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    setIcon();
+  }
+
+  // Estado inicial SIEMPRE claro salvo que usuario haya elegido oscuro
+  if(localStorage.getItem('theme') === 'dark'){
+    document.body.classList.add('dark');
+  }
+
+  setIcon();
+</script>
+
+</body>
+</html>
