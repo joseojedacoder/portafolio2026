@@ -13,29 +13,23 @@
       --card:#fafafa;         /* tarjetas suaves */
     }
 
-    body.dark { --bg:#0f0f0f; --text:#ffffff; --card:#1a1a1a; }
     body.dark{
-  --bg:#0f0f0f;
-  --text:#ffffff;
-  --card:#1a1a1a;
+      --bg:#0f0f0f;
+      --text:#ffffff;
+      --card:#1a1a1a;
 
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.05) 1px,
-    transparent 1px
-  );
+      background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
 
     *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
     html{scroll-behavior:smooth;} 
-    body{background-color: var(--bg);
-  background-image: radial-gradient(
-    rgba(0, 0, 0, 0.05) 1px,
-    transparent 1px
-  );
-  background-size: 22px 22px;
-  color: var(--text);
-  line-height: 1.6;
-  transition: .3s;}
+    body{
+      background-color: var(--bg);
+      background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+      background-size: 22px 22px;
+      color: var(--text);
+      line-height: 1.6;
+      transition: .3s;}
 
     header{position:fixed;top:0;width:100%;padding:20px 10%;display:flex;justify-content:space-between;align-items:center;background:rgba(245,245,245,0.85);backdrop-filter: blur(10px);z-index:1000;transition:.3s}
     body.dark header{background:rgba(15,15,15,0.9)}
